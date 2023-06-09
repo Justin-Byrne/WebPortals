@@ -1,0 +1,290 @@
+// Formal Industries
+$jet: rgba(43, 45, 47, 1);
+$royal-purple: rgba(106, 86, 142, 1);
+$dark-cornflower-blue: rgba(48, 68, 107, 1);
+$egyptian-blue: rgba(33, 56, 153, 1);
+$slate-gray: rgba(111, 127, 144, 1);
+$blue-gray: rgba(127, 154, 200, 1);
+$blue-green: rgba(83, 157, 187, 1);
+$viridian-green: rgba(88, 141, 145, 1);
+$opal: rgba(184, 208, 201, 1);
+$dark-sea-green: rgba(150, 172, 137, 1);
+$fern-green: rgba(105, 122, 72, 1);
+$castleton-green: rgba(35, 86, 67, 1);
+$bronze: rgba(195, 135, 76, 1);
+$kobe: rgba(114, 56, 30, 1);
+$up-maroon: rgba(109, 24, 21, 1);
+
+// As RGBa codes */
+
+$rgba-primary-0: rgba(114,197,233,1); 	// Main Primary color */
+$rgba-primary-1: rgba(214,241,253,1);
+$rgba-primary-2: rgba(158,218,244,1);
+$rgba-primary-3: rgba( 77,175,217,1);
+$rgba-primary-4: rgba( 44,149,194,1);
+$rgba-secondary-1-0: rgba(126,141,236,1);	// Main Secondary color (1) */
+$rgba-secondary-1-1: rgba(217,222,253,1);
+$rgba-secondary-1-2: rgba(167,178,246,1);
+$rgba-secondary-1-3: rgba( 92,110,223,1);
+$rgba-secondary-1-4: rgba( 60, 80,203,1);
+$rgba-secondary-2-0: rgba(111,238,162,1);	// Main Secondary color (2) */
+$rgba-secondary-2-1: rgba(212,253,229,1);
+$rgba-secondary-2-2: rgba(156,247,193,1);
+$rgba-secondary-2-3: rgba( 73,226,135,1);
+$rgba-secondary-2-4: rgba( 40,209,108,1);
+
+@font-face
+{
+    font-family: 'jetbrains-mono';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/jetbrains-mono/jetbrains-mono-regular-webfont.woff2') format('woff2'),
+    url('../fonts/jetbrains-mono/jetbrains-mono-regular-webfont.woff')  format('woff'),
+    url('../fonts/jetbrains-mono/jetbrains-mono-regular-webfont.ttf')   format('truetype'),
+    url('../fonts/jetbrains-mono/jetbrains-mono-regular-webfont.svg#jetbrains-mono') format('svg');
+}
+
+@font-face
+{
+    font-family: 'opensans';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/opensans/opensans-regular-webfont.woff2') format('woff2'),
+    url('../fonts/opensans/opensans-regular-webfont.woff')  format('woff'),
+    url('../fonts/opensans/opensans-regular-webfont.ttf')   format('truetype'),
+    url('../fonts/opensans/opensans-regular-webfont.svg#opensans') format('svg');
+}
+
+@font-face
+{
+    font-family: 'opensans-bold';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/opensans-bold/opensans-bold-webfont.woff2') format('woff2'),
+    url('../fonts/opensans-bold/opensans-bold-webfont.woff')  format('woff'),
+    url('../fonts/opensans-bold/opensans-bold-webfont.ttf')   format('truetype'),
+    url('../fonts/opensans-bold/opensans-bold-webfont.svg#opensans') format('svg');
+}
+
+body
+{
+    font-family: 'opensans';
+
+    width: 650px;
+    margin: 0 auto;
+    // background: linear-gradient(to bottom, #ece4d9 0%, #e9dfd1 100%);
+
+    background-color: #ece4d9;
+}
+
+h2
+{
+    font-family: 'opensans-bold';
+
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+
+p
+{
+    line-height: 28px;
+
+    text-align: justify;
+}
+
+header
+{
+    h1
+    {
+        font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+        font-size: 92px;
+        font-weight: bold;
+
+        position: relative;
+        left: -4px;
+
+        display: block;
+
+        margin-top: 25px;
+        margin-bottom: 15px;
+
+        text-align: center;
+        letter-spacing: -4px;
+
+        color: #f1ebe5;
+        text-shadow: 0 8px 9px #c4b59d, 0 -2px 1px #fff;
+    }
+
+    #fork-me
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 135px;
+        height: 135px;
+
+        border: 0;
+    }
+
+    #subtitle
+    {
+        text-align: center;
+    }
+
+    #subtitle-section
+    {
+        width: 100%;
+
+        text-align: center;
+
+        .logo
+        {
+            width: 18%;
+            margin: 10px;
+            padding: 10px;
+
+            border-radius: 2px;
+        }
+
+        .arrow
+        {
+            width: 7%;
+            padding: 7px;
+        }
+    }
+}
+
+.console
+{
+    margin-bottom: 26px;
+
+    $border-radius: 3px;
+
+    border-radius: $border-radius;
+    box-shadow: 0 0 6px 2px #787777;
+
+    figure
+    {
+    	display: grid;
+
+        margin-bottom: 0;
+        padding: 10px;
+        padding-top: 5px;
+    	padding-bottom: 7px;
+
+        $border-color: lighten(black, 92%);
+
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        background: linear-gradient($border-color 0%, #f1f1f1 50%, $border-color 100%);
+
+        figcaption
+        {
+        	position: relative;
+
+            color: lighten(black, 40%);
+        }
+    }
+
+    pre
+    {
+        font-size: 11px;
+
+        display: grid;
+
+        width: 100%;
+        margin-bottom: 0;
+        padding: 0;
+
+        code
+        {
+            padding-top: 0;
+            padding-right: 1.5em;
+            padding-bottom: 0;
+            padding-left: 1.5em;
+        }
+    }
+
+    .note
+    {
+    	display: grid;
+
+        padding: 5px;
+
+        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+
+        $border-color: lighten(black, 92%);
+
+        // background: linear-gradient(#f1f1f1 0%, $border-color 50%, #f1f1f1 100%);
+
+        background-color: #cbe2e3;
+
+        span
+        {
+        	position: relative;
+
+        	top: 2px;
+
+        	margin-bottom: 4px;
+
+        	width:  22px;
+        	height: 22px;
+        }
+    }
+}
+
+.console-split
+{
+    @extend .console;
+
+    figure
+    {
+    	grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+
+        figcaption
+        {
+        	&:nth-child(2)
+        	{
+        		padding-left: 4px;
+        		border-left: 1px solid darken(#f1f1f1, 15%);
+        	}
+        }
+    }
+
+    pre
+    {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+
+        code
+        {
+            &:nth-child(2)
+            {
+                color: #3eff4f;
+                border-left: 1px solid lighten(black, 50%);
+                background: black;
+            }
+        }
+    }
+
+    .note
+    {
+    	grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+
+        span
+        {
+	        &:nth-child(2)
+	        {
+	        	padding-left: 2px;
+	            border-left: 1px solid darken(#cbe2e3, 15%);
+	        }
+	    }
+    }
+}

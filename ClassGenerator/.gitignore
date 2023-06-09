@@ -1,0 +1,28 @@
+### HTML5 ###
+# Template for HTML5 projects
+
+## Derived B.S.
+.DS_Store
+
+## Dumps
+_dump/
+*.afdesign
+
+## Special Files
+*.sublime-build
+
+## Config
+koala-config.json
+*.map
+
+## Tests
+*-test-[0-9].*
+
+## Stashes
+**/*-{stash-[0-9]}.*
+**/*-{stash-[0-9]}
+
+## Docs
+CHANGECONTROL.md
+build/readme
+readme.sh

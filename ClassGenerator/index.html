@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>ClassGenerator</title>
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-57x57.png" sizes="57x57" />
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-114x114.png" sizes="114x114" />
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-72x72.png" sizes="72x72" />
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-144x144.png" sizes="144x144" />
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-60x60.png" sizes="60x60" />
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-120x120.png" sizes="120x120" />
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-76x76.png" sizes="76x76" />
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+
+        <link rel="icon" type="image/png" href="images/favicon/favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png"   sizes="96x96" />
+        <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png"   sizes="32x32" />
+        <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png"   sizes="16x16" />
+        <link rel="icon" type="image/png" href="images/favicon/favicon-128.png"     sizes="128x128" />
+
+        <meta name="application-name"                content="&nbsp;"/>
+        <meta name="msapplication-TileColor"         content="#FFFFFF" />
+        <meta name="msapplication-TileImage"         content="images/favicon/mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo"   content="images/favicon/mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="images/favicon/mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo"   content="images/favicon/mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="images/favicon/mstile-310x310.png" />
+
+        <!-- ////    STYLE-SHEETS    //// -->
+
+        <!-- Bootstrap CSS @5.1.3 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="style/normalize.css">
+        <link rel="stylesheet" href="style/icons.css">
+
+        <!-- highlight.js CSS @11.7.0 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-dark.min.css">
+
+        <!-- User Styles -->
+        <link rel="stylesheet" href="style/main.css">
+
+        <!-- ////    SCRIPTS    //// -->
+
+        <!-- Bootstrap @5.1.3 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <!-- highlight.js @11.7.0 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+        <script>hljs.highlightAll ( );</script>
+
+        <!-- JavaScript Libs -->
+        <!-- <script src="script/libs/mousetrap-v1.6.5.js"></script> -->
+        <!-- <script src="https://kit.fontawesome.com/af8a5a661b.js" crossorigin="anonymous"></script> -->
+
+        <!-- Template Variables -->
+        <!-- <script src="script/variables.js"></script> -->
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <h1>ClassGenerator</h1>
+
+            <a href="https://github.com/Justin-Byrne/ClassGenerator" target="_blank">
+                <img id="fork-me" src="images/fork-me.png" alt="Fork me on GitHub">
+            </a>
+
+            <p id="subtitle">
+                Automated UML modeling for JavaScript classes to enable developers to extract valuable insights, save time, reduce risks of inconsistencies, and more...
+            </p>
+
+            <div id="subtitle-section">
+
+                <img class="logo"  src="images/js-logo.png">
+                <img class="arrow" src="images/icons/arrow-right-circle.svg">
+                <img class="logo"  src="images/uml-logo.png">
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <div id="introduction">
+
+                <h2>Introduction</h2>
+
+                <p>The purpose of the <b>ClassGenerator</b> tool is to seamlessly transform JavaScript classes into PlantUML script, allowing for the effortless generation of UML Class Diagrams. To illustrate its functionality, let's consider an illustrative example—an exemplary JavaScript class that we can readily convert into a visually appealing UML class diagram using this tool.</p>
+
+            </div>
+
+            <div class="console">
+
+                <figure>
+
+                    <figcaption>JavaScript Class</figcaption>
+
+                </figure>
+
+                <pre>
+
+                    <code class="language-javascript">
+class ClassName
+{
+    _prop_one = 0;
+    _prop_two = 'string';
+
+    constructor ( )         { /* code */ }
+
+    set prop_one ( value )  { /* code */ }
+    set prop_two ( value )  { /* code */ }
+
+    get prop_one ( )        { /* code */ }
+    get prop_two ( )        { /* code */ }
+
+    get method_get_only ( ) { /* code */ }
+
+    _private_method ( )     { /* code */ }
+
+    public_method ( )       { /* code */ }
+}
+                    </code>
+
+                </pre>
+
+                <div class="note">
+
+                    <span class="icon filetype-js">&nbsp;</span>
+
+                </div>
+
+            </div>
+
+            <div class="console-split">
+
+                <figure>
+
+                    <figcaption>JavaScript Class</figcaption>
+                    <figcaption>PlantUML</figcaption>
+
+                </figure>
+
+                <pre>
+
+                    <code class="language-javascript">
+class ClassName
+{
+    _prop_one = 0;
+    _prop_two = 'string';
+
+    constructor ( )         { /* code */ }
+
+    set prop_one ( value )  { /* code */ }
+    set prop_two ( value )  { /* code */ }
+
+    get prop_one ( )        { /* code */ }
+    get prop_two ( )        { /* code */ }
+
+    get method_get_only ( ) { /* code */ }
+
+    _private_method ( )     { /* code */ }
+
+    public_method ( )       { /* code */ }
+}
+                    </code>
+
+                    <code class="language-plaintext">
+@startuml
+
+class ClassName {
+    _prop_one   <color:gray>{number}</color>
+    _prop_two   <color:gray>{string}</color>
+    __ Setter __
+    prop_one
+    prop_two
+    __ Getter __
+    prop_one
+    prop_two
+    method_get_only
+    _private_method
+    public_method
+}
+@enduml
+                    </code>
+
+                </pre>
+
+                <div class="note">
+
+                    <span class="icon filetype-js">&nbsp;</span>
+                    <span class="icon file-earmark">&nbsp;</span>
+
+                </div>
+
+            </div> <!-- .console -->
+
+        </main>
+
+        <footer></footer>
+
+    </body>
+
+    <!-- <script src="script/main.js"></script> -->
+    <!-- <script src="script/resume.js"></script> -->
+
+</html>
