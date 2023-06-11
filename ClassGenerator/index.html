@@ -57,6 +57,9 @@
 
         <script>hljs.highlightAll ( );</script>
 
+        <!-- Typed.js @1.6.5 -->
+        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
         <!-- JavaScript Libs -->
         <!-- <script src="script/libs/mousetrap-v1.6.5.js"></script> -->
         <!-- <script src="https://kit.fontawesome.com/af8a5a661b.js" crossorigin="anonymous"></script> -->
@@ -73,7 +76,9 @@
             <h1>ClassGenerator</h1>
 
             <a href="https://github.com/Justin-Byrne/ClassGenerator" target="_blank">
+
                 <img id="fork-me" src="images/fork-me.png" alt="Fork me on GitHub">
+
             </a>
 
             <p id="subtitle">
@@ -96,7 +101,7 @@
 
                 <h2>Introduction</h2>
 
-                <p>The purpose of the <b>ClassGenerator</b> tool is to seamlessly transform JavaScript classes into PlantUML script, allowing for the effortless generation of UML Class Diagrams. To illustrate its functionality, let's consider an illustrative example—an exemplary JavaScript class that we can readily convert into a visually appealing UML class diagram using this tool.</p>
+                <p>The purpose of the <b>ClassGenerator</b> tool is to seamlessly transform JavaScript classes into PlantUML script, allowing for the effortless generation of UML Class Diagrams. To illustrate its functionality, let's consider an illustrative example — an exemplary JavaScript class that we can readily convert into a visually appealing UML class diagram.</p>
 
             </div>
 
@@ -104,7 +109,12 @@
 
                 <figure>
 
-                    <figcaption>JavaScript Class</figcaption>
+                    <figcaption>
+
+                        <span class="icon filetype-js">&nbsp;</span>
+                        <span class='text'> JavaScript Class</span>
+
+                    </figcaption>
 
                 </figure>
 
@@ -134,20 +144,25 @@ class ClassName
 
                 </pre>
 
-                <div class="note">
-
-                    <span class="icon filetype-js">&nbsp;</span>
-
-                </div>
-
             </div>
 
             <div class="console-split">
 
                 <figure>
 
-                    <figcaption>JavaScript Class</figcaption>
-                    <figcaption>PlantUML</figcaption>
+                    <figcaption>
+
+                        <span class="icon filetype-js">&nbsp;</span>
+                        <span class='text'> JavaScript Class</span>
+
+                    </figcaption>
+
+                    <figcaption>
+
+                        <span class="icon file-earmark">&nbsp;</span>
+                        <span class='text'> PlantUML</span>
+
+                    </figcaption>
 
                 </figure>
 
@@ -196,14 +211,95 @@ class ClassName {
 
                 </pre>
 
-                <div class="note">
+            </div> <!-- .console-split -->
 
-                    <span class="icon filetype-js">&nbsp;</span>
-                    <span class="icon file-earmark">&nbsp;</span>
+            <div class="console-split">
 
-                </div>
+                <figure>
 
-            </div> <!-- .console -->
+                    <figcaption>
+
+                        <span class="icon filetype-js">&nbsp;</span>
+                        <span class='text'> JavaScript Class</span>
+
+                    </figcaption>
+
+                    <figcaption>
+
+                        <span class="icon file-earmark">&nbsp;</span>
+                        <span class='text'> PlantUML</span>
+
+                    </figcaption>
+
+                </figure>
+
+                <pre>
+
+                    <code class="language-plaintext">
+@startuml
+
+class ClassName {
+    _prop_one   <color:gray>{number}</color>
+    _prop_two   <color:gray>{string}</color>
+    __ Setter __
+    prop_one
+    prop_two
+    __ Getter __
+    prop_one
+    prop_two
+    method_get_only
+    _private_method
+    public_method
+}
+@enduml
+                    </code>
+
+                    <code class="language-javascript">
+class ClassName
+{
+    _prop_one = 0;
+    _prop_two = 'string';
+
+    constructor ( )         { /* code */ }
+
+    set prop_one ( value )  { /* code */ }
+    set prop_two ( value )  { /* code */ }
+
+    get prop_one ( )        { /* code */ }
+    get prop_two ( )        { /* code */ }
+
+    get method_get_only ( ) { /* code */ }
+
+    _private_method ( )     { /* code */ }
+
+    public_method ( )       { /* code */ }
+}
+                    </code>
+
+                </pre>
+
+            </div> <!-- .console-split -->
+
+            <div class="console-run">
+
+                <figure>
+
+                    <figcaption>
+
+                        <span class="icon python">&nbsp;</span>
+                        <span class='text'> ClassBuilder.py</span>
+
+                    </figcaption>
+
+                </figure>
+
+                <pre>
+
+                    <span class='prompt'>&rarr; app :</span><code id="typed"></code>
+
+                </pre>
+
+            </div>
 
         </main>
 
@@ -213,5 +309,166 @@ class ClassName {
 
     <!-- <script src="script/main.js"></script> -->
     <!-- <script src="script/resume.js"></script> -->
+
+    <script>
+        let typed = new Typed ( '#typed',
+        {
+            /**
+             * @property {array} strings strings to be typed
+             * @property {string} stringsElement ID of element containing string children
+             */
+            strings:
+            [
+                'These are the default values...',
+                'You know what you should do?',
+                'Use your own!',
+                'Have a great day!',
+            ],
+            stringsElement: null,
+
+            /**
+            * @property {number} typeSpeed type speed in milliseconds
+            */
+            typeSpeed: 50,
+
+            /**
+            * @property {number} startDelay time before typing starts in milliseconds
+            */
+            startDelay: 0,
+
+            /**
+            * @property {number} backSpeed backspacing speed in milliseconds
+            */
+            backSpeed: 0,
+
+            /**
+            * @property {boolean} smartBackspace only backspace what doesn't match the previous string
+            */
+            smartBackspace: true,
+
+            /**
+            * @property {boolean} shuffle shuffle the strings
+            */
+            shuffle: false,
+
+            /**
+            * @property {number} backDelay time before backspacing in milliseconds
+            */
+            backDelay: 700,
+
+            /**
+            * @property {boolean} fadeOut Fade out instead of backspace
+            * @property {string} fadeOutClass css class for fade animation
+            * @property {boolean} fadeOutDelay Fade out delay in milliseconds
+            */
+            fadeOut: false,
+            fadeOutClass: 'typed-fade-out',
+            fadeOutDelay: 500,
+
+            /**
+            * @property {boolean} loop loop strings
+            * @property {number} loopCount amount of loops
+            */
+            loop: false,
+            loopCount: Infinity,
+
+            /**
+            * @property {boolean} showCursor show cursor
+            * @property {string} cursorChar character for cursor
+            * @property {boolean} autoInsertCss insert CSS for cursor and fadeOut into HTML <head>
+            */
+            showCursor: true,
+            cursorChar: '|',
+            autoInsertCss: true,
+
+            /**
+            * @property {string} attr attribute for typing
+            * Ex: input placeholder, value, or just HTML text
+            */
+            attr: null,
+
+            /**
+            * @property {boolean} bindInputFocusEvents bind to focus and blur if el is text input
+            */
+            bindInputFocusEvents: false,
+
+            /**
+            * @property {string} contentType 'html' or 'null' for plaintext
+            */
+            contentType: 'html',
+
+            /**
+            * Before it begins typing
+            * @param {Typed} self
+            */
+            onBegin: (self) => {},
+
+            /**
+            * All typing is complete
+            * @param {Typed} self
+            */
+            onComplete: (self) => {},
+
+            /**
+            * Before each string is typed
+            * @param {number} arrayPos
+            * @param {Typed} self
+            */
+            preStringTyped: (arrayPos, self) => {},
+
+            /**
+            * After each string is typed
+            * @param {number} arrayPos
+            * @param {Typed} self
+            */
+            onStringTyped: (arrayPos, self) => {},
+
+            /**
+            * During looping, after last string is typed
+            * @param {Typed} self
+            */
+            onLastStringBackspaced: (self) => {},
+
+            /**
+            * Typing has been stopped
+            * @param {number} arrayPos
+            * @param {Typed} self
+            */
+            onTypingPaused: (arrayPos, self) => {},
+
+            /**
+            * Typing has been started after being stopped
+            * @param {number} arrayPos
+            * @param {Typed} self
+            */
+            onTypingResumed: (arrayPos, self) => {},
+
+            /**
+            * After reset
+            * @param {Typed} self
+            */
+            onReset: (self) => {},
+
+            /**
+            * After stop
+            * @param {number} arrayPos
+            * @param {Typed} self
+            */
+            onStop: (arrayPos, self) => {},
+
+            /**
+            * After start
+            * @param {number} arrayPos
+            * @param {Typed} self
+            */
+            onStart: (arrayPos, self) => {},
+
+            /**
+            * After destroy
+            * @param {Typed} self
+            */
+            onDestroy: (self) => {},
+        } );
+    </script>
 
 </html>

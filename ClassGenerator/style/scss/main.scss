@@ -17,21 +17,25 @@ $up-maroon: rgba(109, 24, 21, 1);
 
 // As RGBa codes */
 
-$rgba-primary-0: rgba(114,197,233,1); 	// Main Primary color */
+$rgba-primary-0: rgba(114,197,233,1);   // Main Primary color */
 $rgba-primary-1: rgba(214,241,253,1);
 $rgba-primary-2: rgba(158,218,244,1);
 $rgba-primary-3: rgba( 77,175,217,1);
 $rgba-primary-4: rgba( 44,149,194,1);
-$rgba-secondary-1-0: rgba(126,141,236,1);	// Main Secondary color (1) */
+
+$rgba-secondary-1-0: rgba(126,141,236,1);   // Main Secondary color (1) */
 $rgba-secondary-1-1: rgba(217,222,253,1);
 $rgba-secondary-1-2: rgba(167,178,246,1);
 $rgba-secondary-1-3: rgba( 92,110,223,1);
 $rgba-secondary-1-4: rgba( 60, 80,203,1);
-$rgba-secondary-2-0: rgba(111,238,162,1);	// Main Secondary color (2) */
+
+$rgba-secondary-2-0: rgba(111,238,162,1);   // Main Secondary color (2) */
 $rgba-secondary-2-1: rgba(212,253,229,1);
 $rgba-secondary-2-2: rgba(156,247,193,1);
 $rgba-secondary-2-3: rgba( 73,226,135,1);
 $rgba-secondary-2-4: rgba( 40,209,108,1);
+
+////    FONTS   ////////////////////
 
 @font-face
 {
@@ -69,13 +73,27 @@ $rgba-secondary-2-4: rgba( 40,209,108,1);
     url('../fonts/opensans-bold/opensans-bold-webfont.svg#opensans') format('svg');
 }
 
+@font-face
+{
+    font-family: 'courier-prime';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/courier-prime/courier_prime_code-webfont.woff2') format('woff2'),
+    url('../fonts/courier-prime/courier_prime_code-webfont.woff')  format('woff'),
+    url('../fonts/courier-prime/courier_prime_code-webfont.ttf')   format('truetype'),
+    url('../fonts/courier-prime/courier_prime_code-webfont.svg#courier-prime') format('svg');
+
+}
+
+////    HTML TAGS   ////////////////
+
 body
 {
     font-family: 'opensans';
 
     width: 650px;
     margin: 0 auto;
-    // background: linear-gradient(to bottom, #ece4d9 0%, #e9dfd1 100%);
 
     background-color: #ece4d9;
 }
@@ -93,6 +111,11 @@ p
     line-height: 28px;
 
     text-align: justify;
+}
+
+b
+{
+    font-family: 'opensans-bold';
 }
 
 header
@@ -132,6 +155,7 @@ header
 
     #subtitle
     {
+        font-size: 16px;
         text-align: center;
     }
 
@@ -158,47 +182,69 @@ header
     }
 }
 
+////    CONSOLES    ////////////////
+
 .console
 {
-    margin-bottom: 26px;
-
     $border-radius: 3px;
+
+    margin-bottom: 26px;
 
     border-radius: $border-radius;
     box-shadow: 0 0 6px 2px #787777;
 
     figure
     {
-    	display: grid;
+        font-family: 'courier-prime';
+
+        display: grid;
 
         margin-bottom: 0;
         padding: 10px;
-        padding-top: 5px;
-    	padding-bottom: 7px;
-
-        $border-color: lighten(black, 92%);
+        padding-top: 7px;
+        padding-bottom: 7px;
 
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
+
+        $border-color: lighten(black, 92%);
+
         background: linear-gradient($border-color 0%, #f1f1f1 50%, $border-color 100%);
 
         figcaption
         {
-        	position: relative;
+            position: relative;
 
-            color: lighten(black, 40%);
+            font-size: 13px;
+
+            color: lighten(black, 20%);
+
+            span.text
+            {
+                position: relative;
+
+                left: -3px;
+                top: 0px;
+
+                vertical-align: bottom;
+            }
         }
     }
 
     pre
     {
-        font-size: 11px;
+        font-size: .72rem;
 
         display: grid;
 
         width: 100%;
         margin-bottom: 0;
         padding: 0;
+
+        border-top: 1px solid #979797;
+
+        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
 
         code
         {
@@ -211,29 +257,115 @@ header
 
     .note
     {
-    	display: grid;
+        display: grid;
 
         padding: 5px;
 
         border-bottom-right-radius: $border-radius;
         border-bottom-left-radius: $border-radius;
 
-        $border-color: lighten(black, 92%);
-
-        // background: linear-gradient(#f1f1f1 0%, $border-color 50%, #f1f1f1 100%);
-
         background-color: #cbe2e3;
 
         span
         {
-        	position: relative;
+            position: relative;
+            top: 2px;
 
-        	top: 2px;
+            width: 22px;
+            height: 22px;
+            margin-bottom: 4px;
+        }
+    }
+}
 
-        	margin-bottom: 4px;
+.console-run
+{
+    $border-radius: 3px;
 
-        	width:  22px;
-        	height: 22px;
+    margin-bottom: 26px;
+
+    border-radius: $border-radius;
+    box-shadow: 0 0 6px 2px #787777;
+
+    figure
+    {
+        font-family: 'courier-prime';
+
+        display: flex;
+
+        font-size: 14px;
+
+        margin-bottom: 0;
+        padding: 10px;
+        padding-top: 5px;
+        padding-bottom: 7px;
+
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+
+        $color: rgba(51,51,51,1.0);
+
+        $border-color: lighten($color, 5%);
+
+        background: linear-gradient($color 0%, $border-color 50%, $color 100%);
+
+        figcaption
+        {
+            position: relative;
+
+            color: white;
+
+            span.python
+            {
+                padding-top: 2px;
+            }
+
+            span.text
+            {
+                vertical-align: bottom;
+
+                position: relative;
+
+                top: 2px;
+            }
+        }
+    }
+
+    pre
+    {
+        color: #3ccacb;
+
+        font-size: .72rem;
+
+        display: flex;
+
+        width: 100%;
+        margin-bottom: 0;
+        padding: 10px;
+
+        background: #2b2b2b;
+
+        border-bottom-left-radius:  $border-radius;
+        border-bottom-right-radius: $border-radius;
+
+        border-top: 1px solid #1c1c1c;
+
+        .prompt
+        {
+            margin-right: 6px;
+        }
+
+        code
+        {
+            color: #63ff70;
+
+            padding-top: 0;
+            padding-bottom: 0;
+
+            &.hljs
+            {
+                padding: 0 !important;
+            }
         }
     }
 }
@@ -244,16 +376,17 @@ header
 
     figure
     {
-    	grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 0;
 
         figcaption
         {
-        	&:nth-child(2)
-        	{
-        		padding-left: 4px;
-        		border-left: 1px solid darken(#f1f1f1, 15%);
-        	}
+            &:nth-child(2)
+            {
+                padding-left: 4px;
+
+                border-left: 1px solid darken(#f1f1f1, 15%);
+            }
         }
     }
 
@@ -275,16 +408,17 @@ header
 
     .note
     {
-    	grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 0;
 
         span
         {
-	        &:nth-child(2)
-	        {
-	        	padding-left: 2px;
-	            border-left: 1px solid darken(#cbe2e3, 15%);
-	        }
-	    }
+            &:nth-child(2)
+            {
+                padding-left: 2px;
+
+                border-left: 1px solid darken(#cbe2e3, 15%);
+            }
+        }
     }
 }

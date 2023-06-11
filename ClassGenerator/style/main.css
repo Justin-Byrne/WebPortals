@@ -13,6 +13,11 @@
   font-weight: normal;
   font-style: normal;
   src: url("../fonts/opensans-bold/opensans-bold-webfont.woff2") format("woff2"), url("../fonts/opensans-bold/opensans-bold-webfont.woff") format("woff"), url("../fonts/opensans-bold/opensans-bold-webfont.ttf") format("truetype"), url("../fonts/opensans-bold/opensans-bold-webfont.svg#opensans") format("svg"); }
+@font-face {
+  font-family: 'courier-prime';
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/courier-prime/courier_prime_code-webfont.woff2") format("woff2"), url("../fonts/courier-prime/courier_prime_code-webfont.woff") format("woff"), url("../fonts/courier-prime/courier_prime_code-webfont.ttf") format("truetype"), url("../fonts/courier-prime/courier_prime_code-webfont.svg#courier-prime") format("svg"); }
 body {
   font-family: 'opensans';
   width: 650px;
@@ -27,6 +32,9 @@ h2 {
 p {
   line-height: 28px;
   text-align: justify; }
+
+b {
+  font-family: 'opensans-bold'; }
 
 header h1 {
   font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
@@ -49,6 +57,7 @@ header #fork-me {
   height: 135px;
   border: 0; }
 header #subtitle {
+  font-size: 16px;
   text-align: center; }
 header #subtitle-section {
   width: 100%;
@@ -67,23 +76,33 @@ header #subtitle-section {
   border-radius: 3px;
   box-shadow: 0 0 6px 2px #787777; }
   .console figure, .console-split figure {
+    font-family: 'courier-prime';
     display: grid;
     margin-bottom: 0;
     padding: 10px;
-    padding-top: 5px;
+    padding-top: 7px;
     padding-bottom: 7px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     background: linear-gradient(#ebebeb 0%, #f1f1f1 50%, #ebebeb 100%); }
     .console figure figcaption, .console-split figure figcaption {
       position: relative;
-      color: #666666; }
+      font-size: 13px;
+      color: #333333; }
+      .console figure figcaption span.text, .console-split figure figcaption span.text {
+        position: relative;
+        left: -3px;
+        top: 0px;
+        vertical-align: bottom; }
   .console pre, .console-split pre {
-    font-size: 11px;
+    font-size: .72rem;
     display: grid;
     width: 100%;
     margin-bottom: 0;
-    padding: 0; }
+    padding: 0;
+    border-top: 1px solid #979797;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px; }
     .console pre code, .console-split pre code {
       padding-top: 0;
       padding-right: 1.5em;
@@ -98,9 +117,53 @@ header #subtitle-section {
     .console .note span, .console-split .note span {
       position: relative;
       top: 2px;
-      margin-bottom: 4px;
       width: 22px;
-      height: 22px; }
+      height: 22px;
+      margin-bottom: 4px; }
+
+.console-run {
+  margin-bottom: 26px;
+  border-radius: 3px;
+  box-shadow: 0 0 6px 2px #787777; }
+  .console-run figure {
+    font-family: 'courier-prime';
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 0;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 7px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: linear-gradient(#333333 0%, #404040 50%, #333333 100%); }
+    .console-run figure figcaption {
+      position: relative;
+      color: white; }
+      .console-run figure figcaption span.python {
+        padding-top: 2px; }
+      .console-run figure figcaption span.text {
+        vertical-align: bottom;
+        position: relative;
+        top: 2px; }
+  .console-run pre {
+    color: #3ccacb;
+    font-size: .72rem;
+    display: flex;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 10px;
+    background: #2b2b2b;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top: 1px solid #1c1c1c; }
+    .console-run pre .prompt {
+      margin-right: 6px; }
+    .console-run pre code {
+      color: #63ff70;
+      padding-top: 0;
+      padding-bottom: 0; }
+      .console-run pre code.hljs {
+        padding: 0 !important; }
 
 .console-split figure {
   grid-template-columns: repeat(2, 1fr);
