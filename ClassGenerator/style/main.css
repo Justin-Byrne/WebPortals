@@ -29,15 +29,26 @@ body {
   margin: 0 auto;
   background-color: #ece4d9; }
 
-h2, h3 {
-  color: #212529;
+h2, h3, h4 {
   font-family: 'opensans-bold';
   margin-top: 6px;
-  margin-bottom: 12px; }
+  margin-bottom: 12px;
+  color: #212529; }
 
 h3 {
   font-size: 20px;
   color: #4e5862; }
+
+h4 {
+  font-size: 16px;
+  color: #4e5862; }
+
+hr {
+  border: 0;
+  height: 1px;
+  margin-bottom: 20px;
+  background-color: gray;
+  background: linear-gradient(to left, transparent 10%, black 50%, transparent 90%); }
 
 p {
   line-height: 28px;
@@ -50,12 +61,26 @@ u {
   text-decoration: none;
   color: #1d2d94; }
 
+i {
+  font-family: 'courier-prime';
+  font-size: 15px;
+  font-style: normal;
+  position: relative;
+  top: -1px;
+  padding: 1px 5px;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  color: #00b300;
+  background: white; }
+
 blockquote {
-  color: #434b53;
-  margin-left: 0;
   margin-top: 16px;
   margin-bottom: 16px;
+  margin-left: 0;
   padding-left: 6px;
+  line-height: 1.6rem;
+  text-align: justify;
+  color: #434b53;
   border-left: 5px solid #77c2e2; }
 
 header h1 {
@@ -95,16 +120,53 @@ header #subtitle-section {
 
 main .h3 {
   margin-left: 16px; }
+main .h4 {
+  margin-left: 24px; }
 
-#plantuml {
+#plantuml,
+#uml,
+#linked-uml {
   display: none; }
 
+.note {
+  font-size: 14px;
+  line-height: 1.5rem;
+  display: block;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #676767;
+  background-color: white;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px; }
+  .note::after {
+    content: url("../images/icons/life-preserver.svg");
+    position: relative;
+    float: right;
+    top: -5px;
+    right: -5px; }
+  .note.see {
+    background-color: #d4fde5; }
+    .note.see i {
+      color: #5d5d5d;
+      font-size: 0.9rem;
+      border-color: #d6d4d4;
+      padding-top: 2px; }
+
+.info {
+  border: 1px solid gray;
+  border-radius: 3px;
+  color: gray;
+  background-color: white; }
+  .info ul {
+    line-height: 1.5rem; }
+
 .console, .console-split, .console-run {
+  line-height: 24px;
   margin-top: 26px;
   margin-bottom: 26px;
   border-radius: 3px;
-  box-shadow: 0 0 6px 2px #787777;
-  line-height: 24px; }
+  box-shadow: 0 0 6px 2px #787777; }
   .console figure, .console-split figure, .console-run figure {
     font-family: 'courier-prime';
     display: grid;
@@ -117,13 +179,13 @@ main .h3 {
     border-top-right-radius: 3px;
     background: linear-gradient(#ebebeb 0%, #f1f1f1 50%, #ebebeb 100%); }
     .console figure figcaption, .console-split figure figcaption, .console-run figure figcaption {
-      position: relative;
       font-size: 13px;
+      position: relative;
       color: #333333; }
       .console figure figcaption span.text, .console-split figure figcaption span.text, .console-run figure figcaption span.text {
         position: relative;
-        left: -3px;
         top: 2px;
+        left: -3px;
         vertical-align: bottom; }
   .console pre, .console-split pre, .console-run pre {
     font-size: .7rem;
@@ -135,12 +197,12 @@ main .h3 {
     padding: 0;
     border-top: 1px solid #979797; }
     .console pre code, .console-split pre code, .console-run pre code {
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-      padding-top: 0;
+      padding-top: 10px;
       padding-right: 1.5em;
-      padding-bottom: 0;
-      padding-left: 1.5em; }
+      padding-bottom: 10px;
+      padding-left: 1.5em;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px; }
 
 .console-split figure {
   grid-template-columns: repeat(2, 1fr);
@@ -159,7 +221,11 @@ main .h3 {
     background-color: white; }
     .console-split pre code.language-image img {
       display: block;
-      margin: 0 auto; }
+      margin: 0 auto;
+      margin-top: 46px; }
+      .console-split pre code.language-image img.small-image {
+        width: 80%;
+        margin-top: 25px; }
   .console-split pre code:nth-child(1) {
     border-bottom-right-radius: 0; }
   .console-split pre code:nth-child(2) {
@@ -167,22 +233,22 @@ main .h3 {
     border-bottom-left-radius: 0; }
 
 .console-run figure {
-  display: flex;
   font-size: 14px;
+  display: flex;
   background: linear-gradient(#333333 0%, #404040 50%, #333333 100%); }
   .console-run figure figcaption {
     color: white; }
     .console-run figure figcaption span.text {
-      top: 0px;
+      top: 0;
       left: 1px; }
 .console-run pre {
-  color: #3ccacb;
   display: flex;
   padding: 10px;
-  background: #2b2b2b;
+  color: #3ccacb;
   border-top: 1px solid #1c1c1c;
   border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px; }
+  border-bottom-left-radius: 3px;
+  background: #2b2b2b; }
   .console-run pre .prompt {
     margin-right: 6px; }
   .console-run pre code {

@@ -120,31 +120,113 @@
 
                     <pre>
 
-                        <code class="language-javascript">
-class ClassName
-{
-    _prop_one = 0;
-    _prop_two = 'string';
-
-    constructor ( )         { /* code */ }
-
-    set prop_one ( value )  { /* code */ }
-    set prop_two ( value )  { /* code */ }
-
-    get prop_one ( )        { /* code */ }
-    get prop_two ( )        { /* code */ }
-
-    get method_get_only ( ) { /* code */ }
-
-    _private_method ( )     { /* code */ }
-
-    public_method ( )       { /* code */ }
-}
-                        </code>
+                        <code class="language-javascript javascript-single"></code>
 
                     </pre>
 
                 </div>  <!-- .console -->
+
+                <hr>
+
+                <!-- --------------------------------------- -->
+
+                <h3>PlantUML Class Diagram</h3>
+
+                <blockquote>Convert <u>JavaScript</u> class into <u>PlantUML</u> class diagram, using <b>ClassGenerator</b>...</blockquote>
+
+                <div class="console-run" for="uml">
+
+                    <figure>
+
+                        <figcaption>
+
+                            <span class="icon terminal-white">&nbsp;</span>
+                            <span class='text'> BuildClass.py</span>
+
+                        </figcaption>
+
+                    </figure>
+
+                    <pre>
+
+                        <code id="js-to-plantuml"></code>
+
+                    </pre>
+
+                </div>  <!-- .console-run :: #uml -->
+
+                <div id="uml" class="console-split">
+
+                    <figure>
+
+                        <figcaption>
+
+                            <figcaption>
+
+                                <span class="icon filetype-js">&nbsp;</span>
+                                <span class='text'> class.js</span>
+
+                            </figcaption>
+
+                        </figcaption>
+
+                        <figcaption>
+
+                            <span class="icon file-image">&nbsp;</span>
+                            <span class='text'> class.png</span>
+
+                        </figcaption>
+
+                    </figure>
+
+                    <pre>
+
+                        <code class="language-javascript javascript-single"></code>
+
+                        <code class="language-image plantuml-single"></code>
+
+                    </pre>
+
+                </div> <!-- .console-split #uml -->
+
+                <span class="note">This process will intermediately produce a PlantUML script; prior to a UML image!</span>
+
+                <hgroup class="h4">
+
+                    <h4>PlantUML Image Types</h4>
+
+                    <blockquote>Each available image type accessible via the <i>-m</i> or <i>--make</i> flag</blockquote>
+
+                    <div class="info">
+
+                        <code>
+
+                            <ul>
+                                <li>png</li>
+                                <li>svg</li>
+                                <li>eps</li>
+                                <li>eps:text</li>
+                                <li>pdf</li>
+                                <li>vdx</li>
+                                <li>xmi</li>
+                                <li>scxml</li>
+                                <li>html</li>
+                                <li>txt</li>
+                                <li>utxt</li>
+                                <li>latex</li>
+                                <li>latex:nopreamble</li>
+                                <li>braille</li>
+                            </ul>
+
+                        </code>
+
+                    </div>
+
+                </hgroup>
+
+                <hr>
+
+                <!-- --------------------------------------- -->
 
                 <h3>PlantUML Script</h3>
 
@@ -157,7 +239,7 @@ class ClassName
                         <figcaption>
 
                             <span class="icon terminal-white">&nbsp;</span>
-                            <span class='text'> ClassBuilder.py</span>
+                            <span class='text'> BuildClass.py</span>
 
                         </figcaption>
 
@@ -165,11 +247,11 @@ class ClassName
 
                     <pre>
 
-                        <code id="js-to-plantuml"></code>
+                        <code id="js-to-plantscript"></code>
 
                     </pre>
 
-                </div>
+                </div>  <!-- .console-run :: #plantuml -->
 
                 <div id="plantuml" class="console-split">
 
@@ -193,128 +275,86 @@ class ClassName
 
                     <pre>
 
-                        <code class="language-javascript">
-class ClassName
-{
-    _prop_one = 0;
-    _prop_two = 'string';
+                        <code class="language-javascript javascript-single"></code>
 
-    constructor ( )         { /* code */ }
-
-    set prop_one ( value )  { /* code */ }
-    set prop_two ( value )  { /* code */ }
-
-    get prop_one ( )        { /* code */ }
-    get prop_two ( )        { /* code */ }
-
-    get method_get_only ( ) { /* code */ }
-
-    _private_method ( )     { /* code */ }
-
-    public_method ( )       { /* code */ }
-}
-                        </code>
-
-                        <code class="language-plaintext">
-@startuml
-
-class ClassName {
-    _prop_one   <color:gray>{number}</color>
-    _prop_two   <color:gray>{string}</color>
-    __ Setter __
-    prop_one
-    prop_two
-    __ Getter __
-    prop_one
-    prop_two
-    method_get_only
-    _private_method
-    public_method
-}
-@enduml
-                        </code>
+                        <code class="language-plaintext plantscript-single"></code>
 
                     </pre>
 
-                </div> <!-- .console-split -->
+                </div> <!-- .console-split #plantuml -->
 
-            </hgroup>
+                <span class="note">This process will only produce a PlantUML script!</span>
 
-            <div class="console-split">
+                <hr>
 
-                <figure>
+                <!-- --------------------------------------- -->
 
-                    <figcaption>
+                <h3>PlantUML Linked Class Diagram</h3>
+
+                <blockquote>Convert <u>JavaScript</u> class with linked <u>JavaScript</u> objects into a linked <u>PlantUML</u> class diagram...</blockquote>
+
+                <div class="console-run" for="linked-uml">
+
+                    <figure>
 
                         <figcaption>
 
-                            <span class="icon file-earmark">&nbsp;</span>
-                            <span class='text'> class.txt</span>
+                            <span class="icon terminal-white">&nbsp;</span>
+                            <span class='text'> BuildClass.py</span>
 
                         </figcaption>
 
-                    </figcaption>
+                    </figure>
 
-                    <figcaption>
+                    <pre>
 
-                        <span class="icon file-image">&nbsp;</span>
-                        <span class='text'> class.png</span>
+                        <code id="js-to-linked-plantuml"></code>
 
-                    </figcaption>
+                    </pre>
 
-                </figure>
+                </div>  <!-- .console-run :: #linked-uml -->
 
-                <pre>
+                <div id="linked-uml" class="console-split">
 
-                    <code class="language-plaintext">
-@startuml
+                    <figure>
 
-class ClassName {
-    _prop_one   <color:gray>{number}</color>
-    _prop_two   <color:gray>{string}</color>
-    __ Setter __
-    prop_one
-    prop_two
-    __ Getter __
-    prop_one
-    prop_two
-    method_get_only
-    _private_method
-    public_method
-}
-@enduml
-                    </code>
+                        <figcaption>
 
-                    <code class="language-image">
+                            <figcaption>
 
-                        <img src="images/uml_class.png">
+                                <span class="icon filetype-js">&nbsp;</span>
+                                <span class='text'> class.js</span>
 
-                    </code>
+                            </figcaption>
 
-                </pre>
+                        </figcaption>
 
-            </div> <!-- .console-split -->
+                        <figcaption>
 
-            <div class="console-run">
+                            <span class="icon file-image">&nbsp;</span>
+                            <span class='text'> class.png</span>
 
-                <figure>
+                        </figcaption>
 
-                    <figcaption>
+                    </figure>
 
-                        <span class="icon terminal-white">&nbsp;</span>
-                        <span class='text'> ClassBuilder.py</span>
+                    <pre>
 
-                    </figcaption>
+                        <code class="language-javascript javascript-linked"></code>
 
-                </figure>
+                        <code class="language-image plantuml-linked"></code>
 
-                <pre>
+                    </pre>
 
-                    <code id="typed"></code>
+                </div> <!-- .console-split #uml -->
 
-                </pre>
+                <span class="note">This process also produces PlantUML scripts & images for each UML model!</span>
 
-            </div>
+                <span class="note see">See output above <i>BuildClass.py</i> output!</span>
+
+                <hr>
+
+            </hgroup>
 
         </main>
 
