@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
 @font-face {
   font-family: 'jetbrains-mono';
   font-weight: normal;
@@ -24,10 +29,15 @@ body {
   margin: 0 auto;
   background-color: #ece4d9; }
 
-h2 {
+h2, h3 {
+  color: #212529;
   font-family: 'opensans-bold';
   margin-top: 6px;
   margin-bottom: 12px; }
+
+h3 {
+  font-size: 20px;
+  color: #4e5862; }
 
 p {
   line-height: 28px;
@@ -35,6 +45,18 @@ p {
 
 b {
   font-family: 'opensans-bold'; }
+
+u {
+  text-decoration: none;
+  color: #1d2d94; }
+
+blockquote {
+  color: #434b53;
+  margin-left: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-left: 6px;
+  border-left: 5px solid #77c2e2; }
 
 header h1 {
   font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
@@ -71,13 +93,22 @@ header #subtitle-section {
     width: 7%;
     padding: 7px; }
 
-.console, .console-split {
+main .h3 {
+  margin-left: 16px; }
+
+#plantuml {
+  display: none; }
+
+.console, .console-split, .console-run {
+  margin-top: 26px;
   margin-bottom: 26px;
   border-radius: 3px;
-  box-shadow: 0 0 6px 2px #787777; }
-  .console figure, .console-split figure {
+  box-shadow: 0 0 6px 2px #787777;
+  line-height: 24px; }
+  .console figure, .console-split figure, .console-run figure {
     font-family: 'courier-prime';
     display: grid;
+    margin: 0 0 1rem;
     margin-bottom: 0;
     padding: 10px;
     padding-top: 7px;
@@ -85,85 +116,31 @@ header #subtitle-section {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     background: linear-gradient(#ebebeb 0%, #f1f1f1 50%, #ebebeb 100%); }
-    .console figure figcaption, .console-split figure figcaption {
+    .console figure figcaption, .console-split figure figcaption, .console-run figure figcaption {
       position: relative;
       font-size: 13px;
       color: #333333; }
-      .console figure figcaption span.text, .console-split figure figcaption span.text {
+      .console figure figcaption span.text, .console-split figure figcaption span.text, .console-run figure figcaption span.text {
         position: relative;
         left: -3px;
-        top: 0px;
+        top: 2px;
         vertical-align: bottom; }
-  .console pre, .console-split pre {
-    font-size: .72rem;
+  .console pre, .console-split pre, .console-run pre {
+    font-size: .7rem;
+    line-height: 18px;
     display: grid;
     width: 100%;
+    margin-top: 0;
     margin-bottom: 0;
     padding: 0;
-    border-top: 1px solid #979797;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px; }
-    .console pre code, .console-split pre code {
+    border-top: 1px solid #979797; }
+    .console pre code, .console-split pre code, .console-run pre code {
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
       padding-top: 0;
       padding-right: 1.5em;
       padding-bottom: 0;
       padding-left: 1.5em; }
-  .console .note, .console-split .note {
-    display: grid;
-    padding: 5px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    background-color: #cbe2e3; }
-    .console .note span, .console-split .note span {
-      position: relative;
-      top: 2px;
-      width: 22px;
-      height: 22px;
-      margin-bottom: 4px; }
-
-.console-run {
-  margin-bottom: 26px;
-  border-radius: 3px;
-  box-shadow: 0 0 6px 2px #787777; }
-  .console-run figure {
-    font-family: 'courier-prime';
-    display: flex;
-    font-size: 14px;
-    margin-bottom: 0;
-    padding: 10px;
-    padding-top: 5px;
-    padding-bottom: 7px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    background: linear-gradient(#333333 0%, #404040 50%, #333333 100%); }
-    .console-run figure figcaption {
-      position: relative;
-      color: white; }
-      .console-run figure figcaption span.python {
-        padding-top: 2px; }
-      .console-run figure figcaption span.text {
-        vertical-align: bottom;
-        position: relative;
-        top: 2px; }
-  .console-run pre {
-    color: #3ccacb;
-    font-size: .72rem;
-    display: flex;
-    width: 100%;
-    margin-bottom: 0;
-    padding: 10px;
-    background: #2b2b2b;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-top: 1px solid #1c1c1c; }
-    .console-run pre .prompt {
-      margin-right: 6px; }
-    .console-run pre code {
-      color: #63ff70;
-      padding-top: 0;
-      padding-bottom: 0; }
-      .console-run pre code.hljs {
-        padding: 0 !important; }
 
 .console-split figure {
   grid-template-columns: repeat(2, 1fr);
@@ -174,15 +151,43 @@ header #subtitle-section {
 .console-split pre {
   grid-template-columns: repeat(2, 1fr);
   gap: 0; }
-  .console-split pre code:nth-child(2) {
+  .console-split pre code.language-plaintext {
     color: #3eff4f;
-    border-left: 1px solid gray;
     background: black; }
-.console-split .note {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0; }
-  .console-split .note span:nth-child(2) {
-    padding-left: 2px;
-    border-left: 1px solid #99c6c8; }
+  .console-split pre code.language-image {
+    padding: 0;
+    background-color: white; }
+    .console-split pre code.language-image img {
+      display: block;
+      margin: 0 auto; }
+  .console-split pre code:nth-child(1) {
+    border-bottom-right-radius: 0; }
+  .console-split pre code:nth-child(2) {
+    border-left: 1px solid gray;
+    border-bottom-left-radius: 0; }
+
+.console-run figure {
+  display: flex;
+  font-size: 14px;
+  background: linear-gradient(#333333 0%, #404040 50%, #333333 100%); }
+  .console-run figure figcaption {
+    color: white; }
+    .console-run figure figcaption span.text {
+      top: 0px;
+      left: 1px; }
+.console-run pre {
+  color: #3ccacb;
+  display: flex;
+  padding: 10px;
+  background: #2b2b2b;
+  border-top: 1px solid #1c1c1c;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px; }
+  .console-run pre .prompt {
+    margin-right: 6px; }
+  .console-run pre code {
+    color: #63ff70; }
+    .console-run pre code.hljs {
+      padding: 0 !important; }
 
 /*# sourceMappingURL=main.css.map */

@@ -2,8 +2,8 @@
 {
     display: inline-block;
 
-    width:  24px;
-    height: 24px;
+    width:  20px;
+    height: 22px;
     /*margin-left: 2px;*/
 
     vertical-align: top;
@@ -159,6 +159,16 @@
 	content: url('../images/icons/record.svg');
 }
 
+.return-key-white
+{
+	content: url('../images/icons/return-key-white.svg');
+}
+
+.return-key
+{
+	content: url('../images/icons/return-key.svg');
+}
+
 .rocket-fill
 {
 	content: url('../images/icons/rocket-fill.svg');
@@ -182,6 +192,11 @@
 .screwdriver
 {
 	content: url('../images/icons/screwdriver.svg');
+}
+
+.terminal-white
+{
+	content: url('../images/icons/terminal-white.svg');
 }
 
 .terminal

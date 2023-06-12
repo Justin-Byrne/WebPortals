@@ -35,9 +35,7 @@
 
         <!-- ////    STYLE-SHEETS    //// -->
 
-        <!-- Bootstrap CSS @5.1.3 -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+        <!-- General -->
         <link rel="stylesheet" href="style/normalize.css">
         <link rel="stylesheet" href="style/icons.css">
 
@@ -49,8 +47,11 @@
 
         <!-- ////    SCRIPTS    //// -->
 
-        <!-- Bootstrap @5.1.3 -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!-- jQuery @3.7.0 -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+        <!-- jQuery UI @1.13.2 -->
+        <script src="script/libs/jquery-ui-1.13.2.min.js"></script>
 
         <!-- highlight.js @11.7.0 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -59,13 +60,6 @@
 
         <!-- Typed.js @1.6.5 -->
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-        <!-- JavaScript Libs -->
-        <!-- <script src="script/libs/mousetrap-v1.6.5.js"></script> -->
-        <!-- <script src="https://kit.fontawesome.com/af8a5a661b.js" crossorigin="anonymous"></script> -->
-
-        <!-- Template Variables -->
-        <!-- <script src="script/variables.js"></script> -->
 
     </head>
 
@@ -97,30 +91,36 @@
 
         <main>
 
-            <div id="introduction">
+            <hgroup class="h2">
 
                 <h2>Introduction</h2>
 
-                <p>The purpose of the <b>ClassGenerator</b> tool is to seamlessly transform JavaScript classes into PlantUML script, allowing for the effortless generation of UML Class Diagrams. To illustrate its functionality, let's consider an illustrative example — an exemplary JavaScript class that we can readily convert into a visually appealing UML class diagram.</p>
+                <p>The purpose of the <b>ClassGenerator</b> tool is to seamlessly transform <u>JavaScript</u> classes into <u>PlantUML</u> script, allowing for the effortless generation of <u>UML</u> Class diagrams. To illustrate its functionality, let's consider an illustrative example — an exemplary <u>JavaScript</u> class that we can readily convert into a visually appealing <u>UML</u> class diagram.</p>
 
-            </div>
+            </hgroup>
 
-            <div class="console">
+            <hgroup class="h3">
 
-                <figure>
+                <h3>JavaScript Class</h3>
 
-                    <figcaption>
+                <blockquote>Create a standard <u>JavaScript</u> class, like so:</blockquote>
 
-                        <span class="icon filetype-js">&nbsp;</span>
-                        <span class='text'> JavaScript Class</span>
+                <div class="console">
 
-                    </figcaption>
+                    <figure>
 
-                </figure>
+                        <figcaption>
 
-                <pre>
+                            <span class="icon filetype-js">&nbsp;</span>
+                            <span class='text'> class.js</span>
 
-                    <code class="language-javascript">
+                        </figcaption>
+
+                    </figure>
+
+                    <pre>
+
+                        <code class="language-javascript">
 class ClassName
 {
     _prop_one = 0;
@@ -140,11 +140,105 @@ class ClassName
 
     public_method ( )       { /* code */ }
 }
-                    </code>
+                        </code>
 
-                </pre>
+                    </pre>
 
-            </div>
+                </div>  <!-- .console -->
+
+                <h3>PlantUML Script</h3>
+
+                <blockquote>Convert <u>JavaScript</u> class into <u>PlantUML</u> script, using <b>ClassGenerator</b>...</blockquote>
+
+                <div class="console-run" for="plantuml">
+
+                    <figure>
+
+                        <figcaption>
+
+                            <span class="icon terminal-white">&nbsp;</span>
+                            <span class='text'> ClassBuilder.py</span>
+
+                        </figcaption>
+
+                    </figure>
+
+                    <pre>
+
+                        <code id="js-to-plantuml"></code>
+
+                    </pre>
+
+                </div>
+
+                <div id="plantuml" class="console-split">
+
+                    <figure>
+
+                        <figcaption>
+
+                            <span class="icon filetype-js">&nbsp;</span>
+                            <span class='text'> class.js</span>
+
+                        </figcaption>
+
+                        <figcaption>
+
+                            <span class="icon file-earmark">&nbsp;</span>
+                            <span class='text'> class.txt</span>
+
+                        </figcaption>
+
+                    </figure>
+
+                    <pre>
+
+                        <code class="language-javascript">
+class ClassName
+{
+    _prop_one = 0;
+    _prop_two = 'string';
+
+    constructor ( )         { /* code */ }
+
+    set prop_one ( value )  { /* code */ }
+    set prop_two ( value )  { /* code */ }
+
+    get prop_one ( )        { /* code */ }
+    get prop_two ( )        { /* code */ }
+
+    get method_get_only ( ) { /* code */ }
+
+    _private_method ( )     { /* code */ }
+
+    public_method ( )       { /* code */ }
+}
+                        </code>
+
+                        <code class="language-plaintext">
+@startuml
+
+class ClassName {
+    _prop_one   <color:gray>{number}</color>
+    _prop_two   <color:gray>{string}</color>
+    __ Setter __
+    prop_one
+    prop_two
+    __ Getter __
+    prop_one
+    prop_two
+    method_get_only
+    _private_method
+    public_method
+}
+@enduml
+                        </code>
+
+                    </pre>
+
+                </div> <!-- .console-split -->
+
+            </hgroup>
 
             <div class="console-split">
 
@@ -152,43 +246,25 @@ class ClassName
 
                     <figcaption>
 
-                        <span class="icon filetype-js">&nbsp;</span>
-                        <span class='text'> JavaScript Class</span>
+                        <figcaption>
+
+                            <span class="icon file-earmark">&nbsp;</span>
+                            <span class='text'> class.txt</span>
+
+                        </figcaption>
 
                     </figcaption>
 
                     <figcaption>
 
-                        <span class="icon file-earmark">&nbsp;</span>
-                        <span class='text'> PlantUML</span>
+                        <span class="icon file-image">&nbsp;</span>
+                        <span class='text'> class.png</span>
 
                     </figcaption>
 
                 </figure>
 
                 <pre>
-
-                    <code class="language-javascript">
-class ClassName
-{
-    _prop_one = 0;
-    _prop_two = 'string';
-
-    constructor ( )         { /* code */ }
-
-    set prop_one ( value )  { /* code */ }
-    set prop_two ( value )  { /* code */ }
-
-    get prop_one ( )        { /* code */ }
-    get prop_two ( )        { /* code */ }
-
-    get method_get_only ( ) { /* code */ }
-
-    _private_method ( )     { /* code */ }
-
-    public_method ( )       { /* code */ }
-}
-                    </code>
 
                     <code class="language-plaintext">
 @startuml
@@ -209,71 +285,10 @@ class ClassName {
 @enduml
                     </code>
 
-                </pre>
+                    <code class="language-image">
 
-            </div> <!-- .console-split -->
+                        <img src="images/uml_class.png">
 
-            <div class="console-split">
-
-                <figure>
-
-                    <figcaption>
-
-                        <span class="icon filetype-js">&nbsp;</span>
-                        <span class='text'> JavaScript Class</span>
-
-                    </figcaption>
-
-                    <figcaption>
-
-                        <span class="icon file-earmark">&nbsp;</span>
-                        <span class='text'> PlantUML</span>
-
-                    </figcaption>
-
-                </figure>
-
-                <pre>
-
-                    <code class="language-plaintext">
-@startuml
-
-class ClassName {
-    _prop_one   <color:gray>{number}</color>
-    _prop_two   <color:gray>{string}</color>
-    __ Setter __
-    prop_one
-    prop_two
-    __ Getter __
-    prop_one
-    prop_two
-    method_get_only
-    _private_method
-    public_method
-}
-@enduml
-                    </code>
-
-                    <code class="language-javascript">
-class ClassName
-{
-    _prop_one = 0;
-    _prop_two = 'string';
-
-    constructor ( )         { /* code */ }
-
-    set prop_one ( value )  { /* code */ }
-    set prop_two ( value )  { /* code */ }
-
-    get prop_one ( )        { /* code */ }
-    get prop_two ( )        { /* code */ }
-
-    get method_get_only ( ) { /* code */ }
-
-    _private_method ( )     { /* code */ }
-
-    public_method ( )       { /* code */ }
-}
                     </code>
 
                 </pre>
@@ -286,7 +301,7 @@ class ClassName
 
                     <figcaption>
 
-                        <span class="icon python">&nbsp;</span>
+                        <span class="icon terminal-white">&nbsp;</span>
                         <span class='text'> ClassBuilder.py</span>
 
                     </figcaption>
@@ -295,7 +310,7 @@ class ClassName
 
                 <pre>
 
-                    <span class='prompt'>&rarr; app :</span><code id="typed"></code>
+                    <code id="typed"></code>
 
                 </pre>
 
@@ -307,168 +322,6 @@ class ClassName
 
     </body>
 
-    <!-- <script src="script/main.js"></script> -->
-    <!-- <script src="script/resume.js"></script> -->
-
-    <script>
-        let typed = new Typed ( '#typed',
-        {
-            /**
-             * @property {array} strings strings to be typed
-             * @property {string} stringsElement ID of element containing string children
-             */
-            strings:
-            [
-                'These are the default values...',
-                'You know what you should do?',
-                'Use your own!',
-                'Have a great day!',
-            ],
-            stringsElement: null,
-
-            /**
-            * @property {number} typeSpeed type speed in milliseconds
-            */
-            typeSpeed: 50,
-
-            /**
-            * @property {number} startDelay time before typing starts in milliseconds
-            */
-            startDelay: 0,
-
-            /**
-            * @property {number} backSpeed backspacing speed in milliseconds
-            */
-            backSpeed: 0,
-
-            /**
-            * @property {boolean} smartBackspace only backspace what doesn't match the previous string
-            */
-            smartBackspace: true,
-
-            /**
-            * @property {boolean} shuffle shuffle the strings
-            */
-            shuffle: false,
-
-            /**
-            * @property {number} backDelay time before backspacing in milliseconds
-            */
-            backDelay: 700,
-
-            /**
-            * @property {boolean} fadeOut Fade out instead of backspace
-            * @property {string} fadeOutClass css class for fade animation
-            * @property {boolean} fadeOutDelay Fade out delay in milliseconds
-            */
-            fadeOut: false,
-            fadeOutClass: 'typed-fade-out',
-            fadeOutDelay: 500,
-
-            /**
-            * @property {boolean} loop loop strings
-            * @property {number} loopCount amount of loops
-            */
-            loop: false,
-            loopCount: Infinity,
-
-            /**
-            * @property {boolean} showCursor show cursor
-            * @property {string} cursorChar character for cursor
-            * @property {boolean} autoInsertCss insert CSS for cursor and fadeOut into HTML <head>
-            */
-            showCursor: true,
-            cursorChar: '|',
-            autoInsertCss: true,
-
-            /**
-            * @property {string} attr attribute for typing
-            * Ex: input placeholder, value, or just HTML text
-            */
-            attr: null,
-
-            /**
-            * @property {boolean} bindInputFocusEvents bind to focus and blur if el is text input
-            */
-            bindInputFocusEvents: false,
-
-            /**
-            * @property {string} contentType 'html' or 'null' for plaintext
-            */
-            contentType: 'html',
-
-            /**
-            * Before it begins typing
-            * @param {Typed} self
-            */
-            onBegin: (self) => {},
-
-            /**
-            * All typing is complete
-            * @param {Typed} self
-            */
-            onComplete: (self) => {},
-
-            /**
-            * Before each string is typed
-            * @param {number} arrayPos
-            * @param {Typed} self
-            */
-            preStringTyped: (arrayPos, self) => {},
-
-            /**
-            * After each string is typed
-            * @param {number} arrayPos
-            * @param {Typed} self
-            */
-            onStringTyped: (arrayPos, self) => {},
-
-            /**
-            * During looping, after last string is typed
-            * @param {Typed} self
-            */
-            onLastStringBackspaced: (self) => {},
-
-            /**
-            * Typing has been stopped
-            * @param {number} arrayPos
-            * @param {Typed} self
-            */
-            onTypingPaused: (arrayPos, self) => {},
-
-            /**
-            * Typing has been started after being stopped
-            * @param {number} arrayPos
-            * @param {Typed} self
-            */
-            onTypingResumed: (arrayPos, self) => {},
-
-            /**
-            * After reset
-            * @param {Typed} self
-            */
-            onReset: (self) => {},
-
-            /**
-            * After stop
-            * @param {number} arrayPos
-            * @param {Typed} self
-            */
-            onStop: (arrayPos, self) => {},
-
-            /**
-            * After start
-            * @param {number} arrayPos
-            * @param {Typed} self
-            */
-            onStart: (arrayPos, self) => {},
-
-            /**
-            * After destroy
-            * @param {Typed} self
-            */
-            onDestroy: (self) => {},
-        } );
-    </script>
+    <script src="script/main.js"></script>
 
 </html>
