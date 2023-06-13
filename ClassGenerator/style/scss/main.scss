@@ -1,10 +1,3 @@
-*,
-*::before,
-*::after
-{
-    box-sizing: border-box;
-}
-
 // Formal Industries
 $jet: rgba(43, 45, 47, 1);
 $royal-purple: rgba(106, 86, 142, 1);
@@ -92,6 +85,13 @@ $rgba-secondary-2-4: rgba( 40,209,108,1);
 }
 
 ////    HTML TAGS   ////////////////
+
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+}
 
 body
 {
@@ -306,6 +306,12 @@ footer
 
     box-shadow: inset 0px 0px 2px 0px gray;
 
+    a
+    {
+        text-decoration: none;
+        color: $dark;
+    }
+
     div
     {
         display: inline-block;
@@ -317,7 +323,7 @@ footer
 
             position: relative;
 
-            top: 11px;
+            top: 10px;
         }
 
         &:nth-child(1)
@@ -438,6 +444,8 @@ footer
 
     img
     {
+        padding-left: 30px;
+
         animation: loading 3s linear infinite;
 
         @keyframes loading
@@ -481,8 +489,8 @@ footer
                 a
                 {
                     color: $dark;
-                    border-color: #a786b8;
-                    background: linear-gradient(rgba(143, 94, 174, 0.5), rgba(143, 94, 174, 0.75));
+                    border-color: #c0a9cc;
+                    background: linear-gradient(rgba(143, 94, 174, 0.25), rgba(143, 94, 174, 0.5));
                 }
             }
 
@@ -501,8 +509,8 @@ footer
                 a
                 {
                     color: #e6e6e6;
-                    border-color: #3c3c3c;
-                    background: linear-gradient(rgba(41, 42, 45, 0.75), rgba(41, 42, 45, 0.9));
+                    border-color: #545454;
+                    background: linear-gradient(rgba(41, 42, 45, 0.65), rgba(41, 42, 45, 0.9));
                 }
             }
 

@@ -1,8 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box; }
-
 @font-face {
   font-family: 'jetbrains-mono';
   font-weight: normal;
@@ -23,6 +18,11 @@
   font-weight: normal;
   font-style: normal;
   src: url("../fonts/courier-prime/courier_prime_code-webfont.woff2") format("woff2"), url("../fonts/courier-prime/courier_prime_code-webfont.woff") format("woff"), url("../fonts/courier-prime/courier_prime_code-webfont.ttf") format("truetype"), url("../fonts/courier-prime/courier_prime_code-webfont.svg#courier-prime") format("svg"); }
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
 body {
   font-family: 'opensans';
   width: 650px;
@@ -144,13 +144,16 @@ footer {
   border-right: 1px solid gainsboro;
   background-color: #f1ebe3;
   box-shadow: inset 0px 0px 2px 0px gray; }
+  footer a {
+    text-decoration: none;
+    color: #212529; }
   footer div {
     display: inline-block;
     width: 49%; }
     footer div .text {
       vertical-align: top;
       position: relative;
-      top: 11px; }
+      top: 10px; }
     footer div:nth-child(1) img {
       width: 33px; }
     footer div:nth-child(2) {
@@ -206,6 +209,7 @@ footer {
   grid-template-columns: repeat(2, 1fr);
   gap: 0; }
   .more-info img {
+    padding-left: 30px;
     animation: loading 3s linear infinite; }
 @keyframes loading {
   0% {
@@ -231,16 +235,16 @@ footer {
       border-radius: 3px; }
     .more-info ul li:nth-child(1) a {
       color: #212529;
-      border-color: #a786b8;
-      background: linear-gradient(rgba(143, 94, 174, 0.5), rgba(143, 94, 174, 0.75)); }
+      border-color: #c0a9cc;
+      background: linear-gradient(rgba(143, 94, 174, 0.25), rgba(143, 94, 174, 0.5)); }
     .more-info ul li:nth-child(2) a {
       color: #212529;
       border-color: #ffecd3;
       background: linear-gradient(rgba(252, 241, 81, 0.25), rgba(252, 241, 81, 0.75)); }
     .more-info ul li:nth-child(3) a {
       color: #e6e6e6;
-      border-color: #3c3c3c;
-      background: linear-gradient(rgba(41, 42, 45, 0.75), rgba(41, 42, 45, 0.9)); }
+      border-color: #545454;
+      background: linear-gradient(rgba(41, 42, 45, 0.65), rgba(41, 42, 45, 0.9)); }
     .more-info ul li .icon {
       position: relative;
       height: 20px;
