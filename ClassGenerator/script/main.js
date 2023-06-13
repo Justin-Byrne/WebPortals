@@ -121,17 +121,17 @@
 
     let typedPlantScript = new Typed ( '#js-to-plantscript',
     {
-        strings: [ '`&rarr; app : `python3^300 BuildClass.py^300 ~/Programs/JavaScript/Classes/class.js^700 ` &crarr;\n>> [ output ]\n /Users/username/Programs/JavaScript/Classes/output/class.txt`' ],
+        strings: [ '`&rarr; app : `python3^300 BuildClass.py^300 ~/Programs/JavaScript/Classes/class.js^700 ` &crarr;\n>> [ output ]\n /Users/username/Programs/JavaScript/Classes/output/class.txt`' ]
     } );
 
     let typedPlantUml    = new Typed ( '#js-to-plantuml',
     {
-        strings: [ '`&rarr; app : `python3^300 BuildClass.py^300 ~/Programs/JavaScript/Classes/class.js^300 -m^300 "png"^700 ` &crarr;\n>> [ output ]\n /Users/username/Programs/JavaScript/Classes/output/class.txt\n /Users/username/Programs/JavaScript/Classes/output/images/class.png`' ],
+        strings: [ '`&rarr; app : `python3^300 BuildClass.py^300 ~/Programs/JavaScript/Classes/class.js^300 -m^300 "png"^700 ` &crarr;\n>> [ output ]\n /Users/username/Programs/JavaScript/Classes/output/class.txt\n /Users/username/Programs/JavaScript/Classes/output/images/class.png`' ]
     } );
 
     let typedPlantLinkedUml = new Typed ( '#js-to-linked-plantuml',
     {
-        strings: [ '`&rarr; app : `python3^300 BuildClass.py^300 ~/Programs/JavaScript/Classes/^300 -l^300 -m^300 "png"^700 ` &crarr;\n>> [ output ]\n /Users/username/Programs/Programs/JavaScript/Classes/output/two.txt\n /Users/username/Programs/Programs/JavaScript/Classes/output/images/two.png\n\n>> [ output ]\n /Users/username/Programs/Programs/JavaScript/Classes/output/one.txt\n /Users/username/Programs/Programs/JavaScript/Classes/output/images/one.png\n\n>> [ output ]\n /Users/username/Programs/Programs/JavaScript/Classes/output/three.txt\n /Users/username/Programs/Programs/JavaScript/Classes/output/images/three.png\n\n>> [ output ]\n /Users/username/Programs/Programs/JavaScript/Classes/output/two-linked.txt\n /Users/username/Programs/Programs/JavaScript/Classes/output/images/two-linked.png\n\n>> [ output ]\n /Users/username/Programs/Programs/JavaScript/Classes/output/three-linked.txt\n /Users/username/Programs/Programs/JavaScript/Classes/output/images/three-linked.png\n\n>> [ output ]\n /Users/username/Programs/Programs/JavaScript/Classes/output/one-linked.txt\n /Users/username/Programs/Programs/JavaScript/Classes/output/images/one-linked.png`' ],
+        strings: [ '`&rarr; app : `python3^300 BuildClass.py^300 ~/Programs/JavaScript/Classes/^300 -l^300 -m^300 "png"^700 ` &crarr;\n>> [ output ]\n /Users/username/Programs/Programs/JavaScript/Classes/output/one.txt\n /Users/username/Programs/Programs/JavaScript/Classes/output/images/one.png ...\n\n>> [ output ]\n /Users/username/Programs/Programs/JavaScript/Classes/output/one-linked.txt\n /Users/username/Programs/Programs/JavaScript/Classes/output/images/one-linked.png ...`' ]
     } );
 
 ////    POST    ////////////////////////////////////////////
