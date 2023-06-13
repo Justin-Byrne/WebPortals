@@ -79,6 +79,16 @@
 	content: url('../images/icons/diagram-2.svg');
 }
 
+.exclamation-circle
+{
+	content: url('../images/icons/exclamation-circle.svg');
+}
+
+.exclamation-circle-fill
+{
+	content: url('../images/icons/exclamation-circle-fill.svg');
+}
+
 .file-earmark-text
 {
 	content: url('../images/icons/file-earmark-text.svg');
@@ -97,6 +107,11 @@
 .filetype-js
 {
 	content: url('../images/icons/filetype-js.svg');
+}
+
+.github-sponsor
+{
+	content: url('../images/icons/github-sponsor.svg');
 }
 
 .github
